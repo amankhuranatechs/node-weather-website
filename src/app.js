@@ -7,6 +7,8 @@ const geocode  = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 
 const app = express(); // generate the application
+const port = process.env.PORT || 4000;
+
 
 console.log(__dirname); /// return path to the root of the directory
 console.log(path.join(__dirname, '../public'));
@@ -145,6 +147,6 @@ app.get('*', (req, res) => {
 
 
 // The process of starting up a server is an asynchronous process, though it'll happen almost instantly.
-app.listen(4000, () => {
-    console.log(`server started at port 4000`)
+app.listen(port, () => {
+    console.log(`server started at port ${port}`)
 });
